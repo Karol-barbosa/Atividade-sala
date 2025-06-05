@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+.ceu {
+  width: 100%;
+  height: 50vh;
+  background: linear-gradient(to bottom, #87ceeb, #ffffff); /* gradiente azul para branco */
+  position: relative;
+  overflow: hidden;
+}
+
+.campo {
+  width: 100%;
+  height: 50vh;
+  background-color: #7cfc00; /* verde vibrante */
+  position: relative;
+  overflow: hidden;
+}
+
+.sol {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #FFD700 60%, #FFA500);
+  border-radius: 50%;
+  animation: girar 6s linear infinite, flutuar 4s ease-in-out infinite alternate;
+}
+
+@keyframes girar {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes flutuar {
+  from { top: 30px; }
+  to { top: 50px; }
+}
+
+.lutador {
+  position: absolute;
+  bottom: 20px; /* Adjusted for better visibility */
+  height: 100px; /* Adjust as needed */
+  width: auto; /* Maintain aspect ratio */
+  /* transition: transform 0.1s ease-in-out; /* For quick movements, better handled in animation */
+}
+
+.vasco {
+  left: 10%;
+  animation: brigar-vasco 2s infinite ease-in-out;
+}
+
+.corinthians {
+  right: 10%;
+  transform: scaleX(-1); /* Face left */
+  animation: brigar-corinthians 2s infinite ease-in-out;
+}
+
+@keyframes brigar-vasco {
+  0%, 100% {
+    left: 10%;
+    transform: rotate(0deg);
+  }
+  50% {
+    left: calc(50% - 70px); /* Assuming image width around 100-140px, so 50-70px is half */
+    transform: rotate(-8deg);
+  }
+  55% { 
+    left: calc(50% - 75px);
+    transform: rotate(8deg);
+  }
+  60% {
+    left: calc(50% - 70px);
+    transform: rotate(0deg);
+  } 
+}
+
+@keyframes brigar-corinthians {
+  0%, 100% {
+    right: 10%;
+    transform: scaleX(-1) rotate(0deg);
+  }
+  50% {
+    right: calc(50% - 70px); /* Assuming image width around 100-140px, so 50-70px is half */
+    transform: scaleX(-1) rotate(-8deg);
+  }
+  55% {
+    right: calc(50% - 75px);
+    transform: scaleX(-1) rotate(8deg);
+  }
+  60% {
+    right: calc(50% - 70px);
+    transform: scaleX(-1) rotate(0deg);
+  }
+} 
